@@ -8,7 +8,7 @@
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Abstract | Bookdown Template" />
   <meta property="og:type" content="book" />
@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-04-04" />
+<meta name="date" content="2023-05-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,7 +37,7 @@ set in the _output.yml file.</p>" />
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="intro.html"/>
+<link rel="next" href="methods.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -58,6 +58,18 @@ set in the _output.yml file.</p>" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -125,28 +137,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -168,11 +158,22 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.1</b> Render book</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i><b>2</b> Abstract</a></li>
-<li class="chapter" data-level="3" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>3</b> Intro</a></li>
-<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
-<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
-<li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a></li>
+<li class="chapter" data-level="2" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i><b>2</b> Abstract</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="abstract.html"><a href="abstract.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="methods.html"><a href="methods.html#collecting-observation-data"><i class="fa fa-check"></i><b>3.1</b> Collecting Observation Data</a></li>
+<li class="chapter" data-level="3.2" data-path="methods.html"><a href="methods.html#using-streamcat-tools-to-gather-flow-line-metrics"><i class="fa fa-check"></i><b>3.2</b> Using StreamCat Tools To Gather Flow line Metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>4</b> Results</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="results.html"><a href="results.html#analyzing-dipper-observations"><i class="fa fa-check"></i><b>4.1</b> Analyzing Dipper Observations</a></li>
+<li class="chapter" data-level="4.2" data-path="results.html"><a href="results.html#stream-characteristics-watershed"><i class="fa fa-check"></i><b>4.2</b> Stream Characteristics: Watershed</a></li>
+<li class="chapter" data-level="4.3" data-path="results.html"><a href="results.html#stream-characteristics-stream"><i class="fa fa-check"></i><b>4.3</b> Stream Characteristics: Stream</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>5</b> Discussion</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -196,7 +197,32 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="abstract" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Abstract<a href="abstract.html#abstract" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The American Dipper (<em>Cinclus mexicanus</em>) is an avian species that is primarily found in aquatic environments. The Dipper is often referred to as an indicator for good water quality due to the diversity of diet and aquatic insects the species feeds on, (Feck &amp; Hall 2004). As an aquatic songbird, preference of stream and environmental characteristics have been studied but non that are specifically designed around the utilization of citizen science observations. In this research, we aim to expand upon the current understanding of environmental preference for American Dipper observations by using publicly available datasets. From a large number of human observations paired with high resolution stream, watershed, and catchment characteristics, we aim to compare and progress our understanding of Dipper habitat.</p>
 
+<div id="introduction" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Introduction<a href="abstract.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p>Environmental indicators are important ques that allows us to quickly understand the state of an ecosystem (Watzin &amp; MacIntosh 1999, Sullivan &amp; Vierling 2012, Feck &amp; Hall 2004). The response of the environment to pollutants, natural disasters, and anthropocentric disturbance can in return has long been documented (Watzin &amp; MacIntosh 1999, Feck &amp; Hall 2004, Sullivan &amp; Vierling 2012). Species presence being a potential response or indicator within an environment is one example to how we use environmental indicators to understand environmental state. Avian presence, can tell us information about the habitat, food, and environmental resource quality (Sullivan, &amp; Vierling 2012).</p>
+<p>Streams and watershed’s are continuing to be monitored extensively, improving the amount of data and understanding of individual stream characteristics (Erwin &amp; Hamilton 2005, Sullivan &amp; Vierling 2012). Unique characteristics of a a stream stretch far beyond the flow line, influences are at the catchment and watershed level (Erwin &amp; Hamilton 2005, Sullivan &amp; Vierling 2012).</p>
+<pre><code>![American Dipper](&quot;images/dipper.png&quot;)</code></pre>
+<p><br />
+The American Dipper <em>Cinclus mexicanus</em> is an aquatic avian species that ranges from Central America to the furthest northern parts of North America (Kingery &amp; Wilson 2020). The American Dipper (referred to as ‘Dipper’ from now on) is often described as the only true aquatic passerine of North America (Kingery &amp; Wilson 2020, Sullivan &amp; Vierling 2012). As an aquatic songbird, the Dipper and water are interconnected. John Muir describe the Dipper extensively, attributing the relationship of the Dipper to streams as ‘inseparable’. Researchers have pointed to the Dipper as an indication of good water quality (Feck &amp; Hall 2004) but begs the question of what stream characteristics do Dippers truly prefer? In addition, can we use these characteristics as a model to explore other streams within their expected range and predict streams that would be favorable habitat for Dipper’s. The goal of this project is to use citizen science observations of the American Dipper to analyze preferred stream and habitat characteristics in Colorado.</p>
+</blockquote>
+<blockquote>
+<h2 id="stream-selection" class="hasAnchor">Stream Selection<a href="abstract.html#stream-selection" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The interconnections of water quality and Dipper presence is well understood. Yet there are few explorations of the characteristics of streams that yield a dipper observation. Tyler &amp; Ormerod 1994 explored dipper presence in relation to pH and water hardness. Feck &amp; Hall 2004 explored water quality and the abundance of specific insects that Dipper prey upon. Sullivan &amp; Vierling 2012 studied multiple environmental factors that influence Dipper presence. What is clear upon review of existing literature is that the credibility for Dippers as an environmental monitor is growing.</p>
+<p>Stream selection for suitable habitat is often split depending on the season. Dippers are observed year-round in fast moving streams that are unpolluted (Kingery &amp; Wilson 2020). During the breeding season, Dipper’s move to higher elevations in search for suitable nesting habitat. Dipper’s tend to choose specific stream bank characteristics; steep rocks, cliffs, and over hanging ledges to provide suitable nesting sites (Sullivan, &amp; Vierling 2012; Kingery &amp; Wilson 2020). It is noted that during the breeding season, stream width and depth are a priority as the observed characteristics rarely exceed 15 meters in width and 2 meters in depth (Kingery &amp; Wilson 2020). Another important feature is streams lined with rocks and cobble, providing suitable hatching grounds for food sources (Feck &amp; Hall 2004; Sullivan &amp; Vierling 2012).</p>
+</blockquote>
+<blockquote>
+<p>Breeding season fluctuates depending on environmental factors. In fact, their breeding and migration can be influenced by hydrology, emphasizing that the higher amount of discharge in a stream early can result in an earlier Dipper breeding period (Nilsson et al. 2020). Though environmental conditions influence breeding time, Dipper’s typically breed from late March to late April.</p>
+<p>During the non-breeding season, Dipper’s move to larger streams at lower elevations. Post breeding habitat can include wetlands, mountain lakes, or even coastal estuaries. In the winter, deeper streams with ice-free stretches are preferred for hunting (Kingery &amp; Wilson 2020). Similar to their breeding habitat, ledges and rocky riparian habitats are preferred for roosting. </p>
+<h2 id="using-citizen-science-data" class="hasAnchor">Using Citizen Science Data<a href="abstract.html#using-citizen-science-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Avian citizen science observations are among the largest citizen science data sets in the world. Continuous monitoring of streams through multiple entities continues to create higher resolution data, and better understanding of stream characteristics. The combination of high observation density and well understood stream characteristics at the catchment and watershed level, allow us to gain a better understanding of physical environmental factors that may influence Dipper presence.</p>
+<p>In North America, the Dipper is an unmistakable bird, meaning they are not easily confused with any other species. A Dipper is relatively small, warbler sized species ranging from 14-40 cm long, short wings, and a square tail. Adults display a gray, drab, configuration with a slight hint of brown on their head and neck. Their bill is short and dark during breeding season, and lighter in the non breeding season. Dippers are monomorphic but females tend to be smaller than males.</p>
+<p>The name “Dipper” is certainly related to their behavior. Dippers are known for their “bobbing” an up and down movement hinged at the knees. The species constantly dips, usually around 40-60 times per min, but does not dip while preening(citation Birds of the World). Dipping serves as a function to communicate location, as a warning, deter predators, signal fitness, measure position, and possibly provide better vision into water when browsing for prey.</p>
+</blockquote>
+
+</div>
 </div>
             </section>
 
@@ -204,7 +230,7 @@ div.csl-indent {
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="intro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

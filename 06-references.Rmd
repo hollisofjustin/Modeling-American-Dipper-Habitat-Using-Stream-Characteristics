@@ -1,2 +1,39 @@
 # References {-}
 
+Doyle, J. M., Hill, R. A., Leibowitz, S. G., & Ebersole, J. L. (2023). Random forest models to estimate bankfull and low flow channel widths and depths across the conterminous United States. JAWRA Journal of the American Water Resources Association, 1752-1688.13116. https://doi.org/10.1111/1752-1688.13116
+
+Dewitz, J. (2021). National Land Cover Database (NLCD) 2019 Products [Data set]. U.S. Geological Survey. https://doi.org/10.5066/P9KZCM54
+
+Erwin, Martha L. & Hamilton, Pixie A. (2005) Monitoring our rivers and streams. Retrieved April 20, 2023, from https://pubs.usgs.gov/fs/fs-077-02/
+
+Feck, Jules, and Robert O. Hall. "Response of American Dippers (Cinclus Mexicanus) to Variation in Stream Water Quality." Freshwater Biology, vol. 49, no. 9, Sept. 2004, pp. 1123–37. DOI.org (Crossref), https://doi.org/10.1111/j.1365-2427.2004.01254.x.
+
+GBIF Secretariat (2022). Cinclus mexicanus Swainson, 1827, GBIF Backbone Taxonomy. Checklist dataset https://doi.org/10.15468/39omei accessed via GBIF.org on 2023-04-25.
+
+Hill, Ryan A., Marc H. Weber, Scott G. Leibowitz, Anthony R. Olsen, and Darren J. Thornbrugh, 2016. The Stream-Catchment (StreamCat) Dataset: A Database of Watershed Metrics for the Conterminous United States. Journal of the American Water Resources Association (JAWRA) 52:120-128. DOI: 10.1111/1752-1688.12372.
+
+Johnston, M. S.-M., Wesley M. Hochachka, Viviana Ruiz-Gutierrez, Orin J. Robinson, Eliot T. Miller, Tom Auer, Steve Kelling, Daniel Fink, Alison. (n.d.). Chapter 4 modeling encounter rate | best practices for using ebird data. Retrieved May 2, 2023, from https://cornelllabofornithology.github.io/ebird-best-practices/encounter.htm
+
+Kingery, H. E. and M. F. Willson (2020). American Dipper (Cinclus mexicanus), version 1.0. In Birds of the World (P. G. Rodewald, Editor). Cornell Lab of Ornithology, Ithaca, NY, USA. https://doi-org.ezproxy2.library.colostate.edu/10.2173/bow.amedip.01
+
+Manning, David W. P., and S. Mažeika P. Sullivan. "Conservation Across Aquatic-Terrestrial Boundaries: Linking Continental-Scale Water Quality to Emergent Aquatic Insects and Declining Aerial Insectivorous Birds." Frontiers in Ecology and Evolution, vol. 9, Feb. 2021, p. 633160. DOI.org (Crossref), https://doi.org/10.3389/fevo.2021.633160.
+
+Nilsson, Anna L. K., et al. "Hydrology Influences Breeding Time in the White-Throated Dipper." BMC Ecology, vol. 20, no. 1, Dec. 2020, p. 70. DOI.org (Crossref), https://doi.org/10.1186/s12898-020-00338-y.
+
+Smits, J. E. G., & Fernie, K. J. (2013). Avian wildlife as sentinels of ecosystem health. Comparative Immunology, Microbiology and Infectious Diseases, 36(3), 333–342. https://doi.org/10.1016/j.cimid.2012.11.007
+
+Sullivan, S. Mažeika P., and Kerri T. Vierling.(2012) "Exploring the Influences of Multiscale Environmental Factors on the American Dipper Cinclus Mexicanus." Ecography, vol. 35, no. 7, July 2012, pp. 624–36. DOI.org (Crossref), https://doi.org/10.1111/j.1600-0587.2011.07071.x.
+
+
+Silverthorn, Bishop, C. A., Elliott, J. E., & Morrissey, C. A. (2018). An assessment of run-of-river hydroelectric dams on mountain stream ecosystems using the American dipper as an avian indicator. Ecological Indicators, 93, 942–951. https://doi.org/10.1016/j.ecolind.2018.05.086
+
+Watzin, M. C., & McIntosh, A. W. (1999). Aquatic ecosystems in agricultural landscapes: A review of ecological indicators and achievable ecological outcomes. Journal of Soil and Water Conservation, 54(4), 636–644. https://www.jswconline.org/content/54/4/636
+
+
+Photos
+
+https://www.audubon.org/field-guide/bird/american-dipper
+
+https://myedmondsnews.com/2019/11/bird-lore-american-dipper/
+
+https://ebird.org/species/amedip

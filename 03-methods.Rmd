@@ -1,1 +1,146 @@
 # Methods
+
+## Collecting Observation Data
+
+To obtain observations for American Dippers, the Global Diversity Information Facility (GDIF) package, occ_data(), was used. GDIF compiles 123 different citizen science observations from eBird, iNaturalist, the Great Backyard Bird Count, and many other data sets (GBIF Secretariat 2022). Observation counts for the Dipper are strictly human observations. To pull the data, a function was created to iterate over the time period of 2013-2020 and the data was filtered to removed observations that lack metadata.
+
+```{r, eval = FALSE}
+# Set up script
+# function to check for package installation, then install and load libraries
+packageLoad <-
+  function(x) {
+    for (i in 1:length(x)) {
+      if (!x[i] %in% installed.packages()) {
+        install.packages(x[i])
+      }
+      library(x[i], character.only = TRUE)
+    }
+  }
+
+
+# vector of packages to load
+packages <- c('tidyverse',
+              'palmerpenguins',
+              'sf',
+              'terra',
+              'tmap',
+              'rmarkdown',
+              'tigris',
+              'elevatr',
+              'rgdal',
+              'rgbif',
+              'soilDB',
+              'plotly',
+              'dataRetrieval',
+              'nhdplusTools')
+
+packageLoad(packages)
+tmap_mode("view")
+
+```
+
+To provide an area of interest (AOI), required by many functions, Tigris was used to pull state and county information. The Tigris package utilizes U.S Census data shape files which provides a state polygon for the specified state. For this project, we used the state of Colorado as an AOI.
+
+```{r, eval = FALSE}
+states <- tigris::states()
+co <- states %>% 
+  filter(NAME == 'Colorado')
+counties <- tigris::counties(state= "CO")
+```
+
+The nhdplutools package is used to download National Hydrography Data (NHD). By providing an AOI, NHD provides high resolution flow lines and water bodies for Colorado and necessary for analysis. The flow lines will later be used to find which hydrographic feature is associated with each Dipper observation. Each flow line is used to analyze what characteristics attract a Dipper to that particular water body, catchment basin, and watershed.
+
+```{r, eval = FALSE}
+co_flowlines <- get_nhdplus(AOI = co,
+                              realization = 'flowline')
+```
+
+Using the AOI Dipper data can be pulled from the GDIF database.
+
+```{r, eval = FALSE}
+#make a string of species names to use in the 'occ_data' function
+species <- "Cinclus mexicanus" 
+
+#also make a string of common names
+common_name <- "American Dipper"
+```
+
+```{r, eval = FALSE}
+emptylist <- vector("list", length = length(species))
+commonemplist <- vector("list", length = length(common_name))
+```
+
+```{r, eval = FALSE}
+#funtion for pulling dipper data
+crawl <- function(year){
+  for (i in 1:length(species)) { #this function can pull data for multiple species 
+    occ <- occ_data( #parameters outlined by the package to pull species specific data
+      scientificName = species[[i]],
+      hasCoordinate = TRUE, #spatial coordinates are an important feature for the observations
+      geometry = st_bbox(co), #identifying the AOI to get observation within colorado
+      year = year,
+    ) %>%
+    .$data # 
+  
+  # add species name column as ID to use later
+  occ$ID <- common_name [[i]]
+  
+  #clean by removing duplicate occurrences
+  emptylist[[i]] <-
+    occ %>% distinct(decimalLatitude, decimalLongitude, .keep_all = TRUE) %>%
+    dplyr::select(Species = ID,
+                  decimalLatitude,
+                  decimalLongitude,
+                  year,
+                  month,
+                  basisOfRecord) #grabbing geographic coordinates, year, month, and the type of record. For this data set, all are "Human Observations" 
+  }
+  dipper <- bind_rows(emptylist)
+}
+
+
+years <- c(2013:2023) #assigning the years to pull data from 
+dipper <- map_dfr(years, crawl) #using our function and inputting years to pull dipper data
+
+# Giving each observation a unique ID 
+dipperunique <- rowid_to_column(dipper) %>% 
+  st_as_sf(coords = c(x ="decimalLongitude", y ="decimalLatitude"), crs = 4269)
+```
+
+The output of the 'crawl' function provides a dipper observation with geographic coordinates. Due to the nature of Dipper's, all of the observations are assumed to be by or within a water body. A new column was additionally created to classify the time of year to be "Breeding" and "Nonbreeding". Breeding season for Dippers is February-April and Nonbreeding is from June-January.
+
+The st_nearest_feature function finds the nearest NHD Colorado flow line and attaches the dipper observation. By attaching the observation to the river, we obtain the COMID (a unique identifier for hydrologic features) which will be used to retrieve data through the StreamCat package. After pairing the observation with flow lines, we tested the assumption of Dipper observations and their association with water by calculating the distance to that feature.
+
+```{r, eval = FALSE}
+#Attaching the observation to the nearest feature
+nearestriver <- st_nearest_feature(dipperunique, co_flowlines)
+#Calculating the distance from the observation to the feature in meters 
+distanceobs <- st_distance(dipperunique, co_flowlines[nearestriver,], by_element = T)
+#adding nearest river and distance to that river to our data frame
+dipperunique<-dipperunique %>% 
+  mutate(distancefromriver = distanceobs, nearestriver = nearestriver)
+#st_nearest_river only provides the index of the flowline observation so we have to match the index of the row id with the flowline
+dipperwflow<- left_join(st_drop_geometry(dipperunique), st_drop_geometry(co_flowlines), by='nearestriver') %>%
+  rename(COMID = comid)
+
+```
+
+## Using StreamCat Tools To Gather Flow line Metrics
+
+StreamCat is an Environmental Protection Agency (EPA) dataset that compiles over 600 metrics for streams across the United States (Hill et al 2016). StreamCat was chosen because of the diversity of data that can be retrieved using one package. Since the goal of this project was to explore the characteristics of watersheds and catchment basins that are known to have a dipper presence, StreamCat is the perfect data set because the majority of metrics are measured at both the catchment and watershed level. Initially, twenty different variables were chosen to explore.The initial metrics explored were Dam Density, Base Flow Index, Elevation, Wetted Width, Thalweg Depth, Bankfull Width, Bankfull Depth, Nitrogen Surplus, and Land Cover. Within Land Cover, a percentage for each assigned land cover type is measured at the watershed and catchment level. Kingery & Wilson 2020 describe Dipper habitat in detail, providing a filter to the Land Cover dataset. Land Cover metrics explored are Mixed Forest, Ice, Herbaceous Wetland, Grassland, Deciduous Forest, Conifer Forest, and Woody Wetland. Two years of NLCD fit the study parameters allowing for Land Cover from 2013 and 2019 to be used. All trends were displayed as a histogram where tight distributions were acknowledged and metrics with a uniform distribution were discarded. Important characteristics that are associated with Dipper observations are regional and landscape characteristics like elevation, slope, geographic location, land cover, thalweg depth, bank-full width, and bank full depth (Sullivan & Vierling 2012). In the StreamCat dataset, Thalweg Depth, Bank full Width, and Bank full Depth are predicted characteristics utilizing Random Forest models for these estimates (Doyle et al 2023). Baseflow index is the the percent of flow that is baseflow. Elevation and slope are generated from a Digital Elevation Model (DEM) and Landcover is derived from the National Land Cover Database (NLCD) from USGS (Dewitz 2021). For this study, NLCD was used for the years 2013 and 2019 to align with the observation years that were defined when extracting GDIF data.
+
+```{r, eval = FALSE}
+# grab distinct comid so not running over multiples
+dippercomid <- dipperwflow %>%
+  distinct(COMID = COMID)
+#Using the COMID to pull metrics from the StreamCatTools package
+streamcattest <- StreamCatTools::sc_get_data(metric ='BFI,
+                                             Elev,
+                                              thalweg_depth_cm,
+                                              bankfull_width_m,
+                                              bankfull_depth_m,
+                                              PctConif2013,
+                                              PctConif2019',
+                                      comid = dippercomid$COMID)
+
+```

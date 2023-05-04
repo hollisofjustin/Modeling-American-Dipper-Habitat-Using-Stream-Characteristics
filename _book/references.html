@@ -8,7 +8,7 @@
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="References | Bookdown Template" />
   <meta property="og:type" content="book" />
@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-04-04" />
+<meta name="date" content="2023-05-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -58,6 +58,18 @@ set in the _output.yml file.</p>" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -125,28 +137,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -168,11 +158,22 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.1</b> Render book</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i><b>2</b> Abstract</a></li>
-<li class="chapter" data-level="3" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>3</b> Intro</a></li>
-<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
-<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
-<li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a></li>
+<li class="chapter" data-level="2" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i><b>2</b> Abstract</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="abstract.html"><a href="abstract.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="methods.html"><a href="methods.html#collecting-observation-data"><i class="fa fa-check"></i><b>3.1</b> Collecting Observation Data</a></li>
+<li class="chapter" data-level="3.2" data-path="methods.html"><a href="methods.html#using-streamcat-tools-to-gather-flow-line-metrics"><i class="fa fa-check"></i><b>3.2</b> Using StreamCat Tools To Gather Flow line Metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>4</b> Results</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="results.html"><a href="results.html#analyzing-dipper-observations"><i class="fa fa-check"></i><b>4.1</b> Analyzing Dipper Observations</a></li>
+<li class="chapter" data-level="4.2" data-path="results.html"><a href="results.html#stream-characteristics-watershed"><i class="fa fa-check"></i><b>4.2</b> Stream Characteristics: Watershed</a></li>
+<li class="chapter" data-level="4.3" data-path="results.html"><a href="results.html#stream-characteristics-stream"><i class="fa fa-check"></i><b>4.3</b> Stream Characteristics: Stream</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>5</b> Discussion</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -196,12 +197,25 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="references" class="section level1 unnumbered hasAnchor">
 <h1>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Doyle, J. M., Hill, R. A., Leibowitz, S. G., &amp; Ebersole, J. L. (2023). Random forest models to estimate bankfull and low flow channel widths and depths across the conterminous United States. JAWRA Journal of the American Water Resources Association, 1752-1688.13116. <a href="https://doi.org/10.1111/1752-1688.13116" class="uri">https://doi.org/10.1111/1752-1688.13116</a></p>
+<p>Dewitz, J. (2021). National Land Cover Database (NLCD) 2019 Products [Data set]. U.S. Geological Survey. <a href="https://doi.org/10.5066/P9KZCM54" class="uri">https://doi.org/10.5066/P9KZCM54</a></p>
+<p>Erwin, Martha L. &amp; Hamilton, Pixie A. (2005) Monitoring our rivers and streams. Retrieved April 20, 2023, from <a href="https://pubs.usgs.gov/fs/fs-077-02/" class="uri">https://pubs.usgs.gov/fs/fs-077-02/</a></p>
+<p>Feck, Jules, and Robert O. Hall. “Response of American Dippers (Cinclus Mexicanus) to Variation in Stream Water Quality.” Freshwater Biology, vol. 49, no. 9, Sept. 2004, pp. 1123–37. DOI.org (Crossref), <a href="https://doi.org/10.1111/j.1365-2427.2004.01254.x" class="uri">https://doi.org/10.1111/j.1365-2427.2004.01254.x</a>.</p>
+<p>GBIF Secretariat (2022). Cinclus mexicanus Swainson, 1827, GBIF Backbone Taxonomy. Checklist dataset <a href="https://doi.org/10.15468/39omei" class="uri">https://doi.org/10.15468/39omei</a> accessed via GBIF.org on 2023-04-25.</p>
+<p>Hill, Ryan A., Marc H. Weber, Scott G. Leibowitz, Anthony R. Olsen, and Darren J. Thornbrugh, 2016. The Stream-Catchment (StreamCat) Dataset: A Database of Watershed Metrics for the Conterminous United States. Journal of the American Water Resources Association (JAWRA) 52:120-128. DOI: 10.1111/1752-1688.12372.</p>
+<p>Johnston, M. S.-M., Wesley M. Hochachka, Viviana Ruiz-Gutierrez, Orin J. Robinson, Eliot T. Miller, Tom Auer, Steve Kelling, Daniel Fink, Alison. (n.d.). Chapter 4 modeling encounter rate | best practices for using ebird data. Retrieved May 2, 2023, from <a href="https://cornelllabofornithology.github.io/ebird-best-practices/encounter.htm" class="uri">https://cornelllabofornithology.github.io/ebird-best-practices/encounter.htm</a></p>
+<p>Kingery, H. E. and M. F. Willson (2020). American Dipper (Cinclus mexicanus), version 1.0. In Birds of the World (P. G. Rodewald, Editor). Cornell Lab of Ornithology, Ithaca, NY, USA. <a href="https://doi-org.ezproxy2.library.colostate.edu/10.2173/bow.amedip.01" class="uri">https://doi-org.ezproxy2.library.colostate.edu/10.2173/bow.amedip.01</a></p>
+<p>Manning, David W. P., and S. Mažeika P. Sullivan. “Conservation Across Aquatic-Terrestrial Boundaries: Linking Continental-Scale Water Quality to Emergent Aquatic Insects and Declining Aerial Insectivorous Birds.” Frontiers in Ecology and Evolution, vol. 9, Feb. 2021, p. 633160. DOI.org (Crossref), <a href="https://doi.org/10.3389/fevo.2021.633160" class="uri">https://doi.org/10.3389/fevo.2021.633160</a>.</p>
+<p>Nilsson, Anna L. K., et al. “Hydrology Influences Breeding Time in the White-Throated Dipper.” BMC Ecology, vol. 20, no. 1, Dec. 2020, p. 70. DOI.org (Crossref), <a href="https://doi.org/10.1186/s12898-020-00338-y" class="uri">https://doi.org/10.1186/s12898-020-00338-y</a>.</p>
+<p>Smits, J. E. G., &amp; Fernie, K. J. (2013). Avian wildlife as sentinels of ecosystem health. Comparative Immunology, Microbiology and Infectious Diseases, 36(3), 333–342. <a href="https://doi.org/10.1016/j.cimid.2012.11.007" class="uri">https://doi.org/10.1016/j.cimid.2012.11.007</a></p>
+<p>Sullivan, S. Mažeika P., and Kerri T. Vierling.(2012) “Exploring the Influences of Multiscale Environmental Factors on the American Dipper Cinclus Mexicanus.” Ecography, vol. 35, no. 7, July 2012, pp. 624–36. DOI.org (Crossref), <a href="https://doi.org/10.1111/j.1600-0587.2011.07071.x" class="uri">https://doi.org/10.1111/j.1600-0587.2011.07071.x</a>.</p>
+<p>Silverthorn, Bishop, C. A., Elliott, J. E., &amp; Morrissey, C. A. (2018). An assessment of run-of-river hydroelectric dams on mountain stream ecosystems using the American dipper as an avian indicator. Ecological Indicators, 93, 942–951. <a href="https://doi.org/10.1016/j.ecolind.2018.05.086" class="uri">https://doi.org/10.1016/j.ecolind.2018.05.086</a></p>
+<p>Watzin, M. C., &amp; McIntosh, A. W. (1999). Aquatic ecosystems in agricultural landscapes: A review of ecological indicators and achievable ecological outcomes. Journal of Soil and Water Conservation, 54(4), 636–644. <a href="https://www.jswconline.org/content/54/4/636" class="uri">https://www.jswconline.org/content/54/4/636</a></p>
+<p>Photos</p>
+<p><a href="https://www.audubon.org/field-guide/bird/american-dipper" class="uri">https://www.audubon.org/field-guide/bird/american-dipper</a></p>
+<p><a href="https://myedmondsnews.com/2019/11/bird-lore-american-dipper/" class="uri">https://myedmondsnews.com/2019/11/bird-lore-american-dipper/</a></p>
+<p><a href="https://ebird.org/species/amedip" class="uri">https://ebird.org/species/amedip</a></p>
 
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div class="csl-entry">
-Ross, Matthew RV, Simon N Topp, Alison P Appling, Xiao Yang, Catherine Kuhn, David Butman, Marc Simard, and Tamlin M Pavelsky. 2019. <span>“AquaSat: A Data Set to Enable Remote Sensing of Water Quality for Inland Waters.”</span> <em>Water Resources Research</em> 55 (11): 10012–25.
-</div>
-</div>
 </div>
             </section>
 

@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Methods | Bookdown Template</title>
+  <title>Chapter 3 Methods | Bookdown Template</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Methods | Bookdown Template" />
+  <meta property="og:title" content="Chapter 3 Methods | Bookdown Template" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Methods | Bookdown Template" />
+  <meta name="twitter:title" content="Chapter 3 Methods | Bookdown Template" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -29,14 +29,14 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-04-04" />
+<meta name="date" content="2023-05-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="intro.html"/>
+<link rel="prev" href="abstract.html"/>
 <link rel="next" href="results.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -58,6 +58,18 @@ set in the _output.yml file.</p>" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -125,28 +137,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -168,11 +158,22 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.1</b> Render book</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i><b>2</b> Abstract</a></li>
-<li class="chapter" data-level="3" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>3</b> Intro</a></li>
-<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
-<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
-<li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a></li>
+<li class="chapter" data-level="2" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i><b>2</b> Abstract</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="abstract.html"><a href="abstract.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="methods.html"><a href="methods.html#collecting-observation-data"><i class="fa fa-check"></i><b>3.1</b> Collecting Observation Data</a></li>
+<li class="chapter" data-level="3.2" data-path="methods.html"><a href="methods.html#using-streamcat-tools-to-gather-flow-line-metrics"><i class="fa fa-check"></i><b>3.2</b> Using StreamCat Tools To Gather Flow line Metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>4</b> Results</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="results.html"><a href="results.html#analyzing-dipper-observations"><i class="fa fa-check"></i><b>4.1</b> Analyzing Dipper Observations</a></li>
+<li class="chapter" data-level="4.2" data-path="results.html"><a href="results.html#stream-characteristics-watershed"><i class="fa fa-check"></i><b>4.2</b> Stream Characteristics: Watershed</a></li>
+<li class="chapter" data-level="4.3" data-path="results.html"><a href="results.html#stream-characteristics-stream"><i class="fa fa-check"></i><b>4.3</b> Stream Characteristics: Stream</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>5</b> Discussion</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -194,16 +195,128 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="methods" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Methods<a href="methods.html#methods" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="methods" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Methods<a href="methods.html#methods" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="collecting-observation-data" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Collecting Observation Data<a href="methods.html#collecting-observation-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To obtain observations for American Dippers, the Global Diversity Information Facility (GDIF) package, occ_data(), was used. GDIF compiles 123 different citizen science observations from eBird, iNaturalist, the Great Backyard Bird Count, and many other data sets (GBIF Secretariat 2022). Observation counts for the Dipper are strictly human observations. To pull the data, a function was created to iterate over the time period of 2013-2020 and the data was filtered to removed observations that lack metadata.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="methods.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up script</span></span>
+<span id="cb3-2"><a href="methods.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># function to check for package installation, then install and load libraries</span></span>
+<span id="cb3-3"><a href="methods.html#cb3-3" aria-hidden="true" tabindex="-1"></a>packageLoad <span class="ot">&lt;-</span></span>
+<span id="cb3-4"><a href="methods.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">function</span>(x) {</span>
+<span id="cb3-5"><a href="methods.html#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)) {</span>
+<span id="cb3-6"><a href="methods.html#cb3-6" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="sc">!</span>x[i] <span class="sc">%in%</span> <span class="fu">installed.packages</span>()) {</span>
+<span id="cb3-7"><a href="methods.html#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">install.packages</span>(x[i])</span>
+<span id="cb3-8"><a href="methods.html#cb3-8" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb3-9"><a href="methods.html#cb3-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">library</span>(x[i], <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-10"><a href="methods.html#cb3-10" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-11"><a href="methods.html#cb3-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-12"><a href="methods.html#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="methods.html#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="methods.html#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># vector of packages to load</span></span>
+<span id="cb3-15"><a href="methods.html#cb3-15" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;tidyverse&#39;</span>,</span>
+<span id="cb3-16"><a href="methods.html#cb3-16" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;palmerpenguins&#39;</span>,</span>
+<span id="cb3-17"><a href="methods.html#cb3-17" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;sf&#39;</span>,</span>
+<span id="cb3-18"><a href="methods.html#cb3-18" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;terra&#39;</span>,</span>
+<span id="cb3-19"><a href="methods.html#cb3-19" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;tmap&#39;</span>,</span>
+<span id="cb3-20"><a href="methods.html#cb3-20" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;rmarkdown&#39;</span>,</span>
+<span id="cb3-21"><a href="methods.html#cb3-21" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;tigris&#39;</span>,</span>
+<span id="cb3-22"><a href="methods.html#cb3-22" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;elevatr&#39;</span>,</span>
+<span id="cb3-23"><a href="methods.html#cb3-23" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;rgdal&#39;</span>,</span>
+<span id="cb3-24"><a href="methods.html#cb3-24" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;rgbif&#39;</span>,</span>
+<span id="cb3-25"><a href="methods.html#cb3-25" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;soilDB&#39;</span>,</span>
+<span id="cb3-26"><a href="methods.html#cb3-26" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;plotly&#39;</span>,</span>
+<span id="cb3-27"><a href="methods.html#cb3-27" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;dataRetrieval&#39;</span>,</span>
+<span id="cb3-28"><a href="methods.html#cb3-28" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;nhdplusTools&#39;</span>)</span>
+<span id="cb3-29"><a href="methods.html#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="methods.html#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="fu">packageLoad</span>(packages)</span>
+<span id="cb3-31"><a href="methods.html#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;view&quot;</span>)</span></code></pre></div>
+<p>To provide an area of interest (AOI), required by many functions, Tigris was used to pull state and county information. The Tigris package utilizes U.S Census data shape files which provides a state polygon for the specified state. For this project, we used the state of Colorado as an AOI.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="methods.html#cb4-1" aria-hidden="true" tabindex="-1"></a>states <span class="ot">&lt;-</span> tigris<span class="sc">::</span><span class="fu">states</span>()</span>
+<span id="cb4-2"><a href="methods.html#cb4-2" aria-hidden="true" tabindex="-1"></a>co <span class="ot">&lt;-</span> states <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="methods.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(NAME <span class="sc">==</span> <span class="st">&#39;Colorado&#39;</span>)</span>
+<span id="cb4-4"><a href="methods.html#cb4-4" aria-hidden="true" tabindex="-1"></a>counties <span class="ot">&lt;-</span> tigris<span class="sc">::</span><span class="fu">counties</span>(<span class="at">state=</span> <span class="st">&quot;CO&quot;</span>)</span></code></pre></div>
+<p>The nhdplutools package is used to download National Hydrography Data (NHD). By providing an AOI, NHD provides high resolution flow lines and water bodies for Colorado and necessary for analysis. The flow lines will later be used to find which hydrographic feature is associated with each Dipper observation. Each flow line is used to analyze what characteristics attract a Dipper to that particular water body, catchment basin, and watershed.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="methods.html#cb5-1" aria-hidden="true" tabindex="-1"></a>co_flowlines <span class="ot">&lt;-</span> <span class="fu">get_nhdplus</span>(<span class="at">AOI =</span> co,</span>
+<span id="cb5-2"><a href="methods.html#cb5-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">realization =</span> <span class="st">&#39;flowline&#39;</span>)</span></code></pre></div>
+<p>Using the AOI Dipper data can be pulled from the GDIF database.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="methods.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#make a string of species names to use in the &#39;occ_data&#39; function</span></span>
+<span id="cb6-2"><a href="methods.html#cb6-2" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="st">&quot;Cinclus mexicanus&quot;</span> </span>
+<span id="cb6-3"><a href="methods.html#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="methods.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#also make a string of common names</span></span>
+<span id="cb6-5"><a href="methods.html#cb6-5" aria-hidden="true" tabindex="-1"></a>common_name <span class="ot">&lt;-</span> <span class="st">&quot;American Dipper&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="methods.html#cb7-1" aria-hidden="true" tabindex="-1"></a>emptylist <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="at">length =</span> <span class="fu">length</span>(species))</span>
+<span id="cb7-2"><a href="methods.html#cb7-2" aria-hidden="true" tabindex="-1"></a>commonemplist <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="at">length =</span> <span class="fu">length</span>(common_name))</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="methods.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#funtion for pulling dipper data</span></span>
+<span id="cb8-2"><a href="methods.html#cb8-2" aria-hidden="true" tabindex="-1"></a>crawl <span class="ot">&lt;-</span> <span class="cf">function</span>(year){</span>
+<span id="cb8-3"><a href="methods.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(species)) { <span class="co">#this function can pull data for multiple species </span></span>
+<span id="cb8-4"><a href="methods.html#cb8-4" aria-hidden="true" tabindex="-1"></a>    occ <span class="ot">&lt;-</span> <span class="fu">occ_data</span>( <span class="co">#parameters outlined by the package to pull species specific data</span></span>
+<span id="cb8-5"><a href="methods.html#cb8-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">scientificName =</span> species[[i]],</span>
+<span id="cb8-6"><a href="methods.html#cb8-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">hasCoordinate =</span> <span class="cn">TRUE</span>, <span class="co">#spatial coordinates are an important feature for the observations</span></span>
+<span id="cb8-7"><a href="methods.html#cb8-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">geometry =</span> <span class="fu">st_bbox</span>(co), <span class="co">#identifying the AOI to get observation within colorado</span></span>
+<span id="cb8-8"><a href="methods.html#cb8-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">year =</span> year,</span>
+<span id="cb8-9"><a href="methods.html#cb8-9" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb8-10"><a href="methods.html#cb8-10" aria-hidden="true" tabindex="-1"></a>    .<span class="sc">$</span>data <span class="co"># </span></span>
+<span id="cb8-11"><a href="methods.html#cb8-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-12"><a href="methods.html#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add species name column as ID to use later</span></span>
+<span id="cb8-13"><a href="methods.html#cb8-13" aria-hidden="true" tabindex="-1"></a>  occ<span class="sc">$</span>ID <span class="ot">&lt;-</span> common_name [[i]]</span>
+<span id="cb8-14"><a href="methods.html#cb8-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-15"><a href="methods.html#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">#clean by removing duplicate occurrences</span></span>
+<span id="cb8-16"><a href="methods.html#cb8-16" aria-hidden="true" tabindex="-1"></a>  emptylist[[i]] <span class="ot">&lt;-</span></span>
+<span id="cb8-17"><a href="methods.html#cb8-17" aria-hidden="true" tabindex="-1"></a>    occ <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(decimalLatitude, decimalLongitude, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-18"><a href="methods.html#cb8-18" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="at">Species =</span> ID,</span>
+<span id="cb8-19"><a href="methods.html#cb8-19" aria-hidden="true" tabindex="-1"></a>                  decimalLatitude,</span>
+<span id="cb8-20"><a href="methods.html#cb8-20" aria-hidden="true" tabindex="-1"></a>                  decimalLongitude,</span>
+<span id="cb8-21"><a href="methods.html#cb8-21" aria-hidden="true" tabindex="-1"></a>                  year,</span>
+<span id="cb8-22"><a href="methods.html#cb8-22" aria-hidden="true" tabindex="-1"></a>                  month,</span>
+<span id="cb8-23"><a href="methods.html#cb8-23" aria-hidden="true" tabindex="-1"></a>                  basisOfRecord) <span class="co">#grabbing geographic coordinates, year, month, and the type of record. For this data set, all are &quot;Human Observations&quot; </span></span>
+<span id="cb8-24"><a href="methods.html#cb8-24" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-25"><a href="methods.html#cb8-25" aria-hidden="true" tabindex="-1"></a>  dipper <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(emptylist)</span>
+<span id="cb8-26"><a href="methods.html#cb8-26" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-27"><a href="methods.html#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-28"><a href="methods.html#cb8-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-29"><a href="methods.html#cb8-29" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2013</span><span class="sc">:</span><span class="dv">2023</span>) <span class="co">#assigning the years to pull data from </span></span>
+<span id="cb8-30"><a href="methods.html#cb8-30" aria-hidden="true" tabindex="-1"></a>dipper <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(years, crawl) <span class="co">#using our function and inputting years to pull dipper data</span></span>
+<span id="cb8-31"><a href="methods.html#cb8-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-32"><a href="methods.html#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Giving each observation a unique ID </span></span>
+<span id="cb8-33"><a href="methods.html#cb8-33" aria-hidden="true" tabindex="-1"></a>dipperunique <span class="ot">&lt;-</span> <span class="fu">rowid_to_column</span>(dipper) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-34"><a href="methods.html#cb8-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="at">x =</span><span class="st">&quot;decimalLongitude&quot;</span>, <span class="at">y =</span><span class="st">&quot;decimalLatitude&quot;</span>), <span class="at">crs =</span> <span class="dv">4269</span>)</span></code></pre></div>
+<p>The output of the ‘crawl’ function provides a dipper observation with geographic coordinates. Due to the nature of Dipper’s, all of the observations are assumed to be by or within a water body. The st_nearest_feature function finds the nearest NHD Colorado flow line and attaches the dipper observation. By attaching the observation to the river, we obtain the COMID (a unique identifier for hydrologic features) which will be used to retrieve data through the StreamCat package. After pairing the observation with flow lines, we tested the assumption of Dipper observations and their association with water by calculating the distance to that feature.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="methods.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Attaching the observation to the nearest feature</span></span>
+<span id="cb9-2"><a href="methods.html#cb9-2" aria-hidden="true" tabindex="-1"></a>nearestriver <span class="ot">&lt;-</span> <span class="fu">st_nearest_feature</span>(dipperunique, co_flowlines)</span>
+<span id="cb9-3"><a href="methods.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculating the distance from the observation to the feature in meters </span></span>
+<span id="cb9-4"><a href="methods.html#cb9-4" aria-hidden="true" tabindex="-1"></a>distanceobs <span class="ot">&lt;-</span> <span class="fu">st_distance</span>(dipperunique, co_flowlines[nearestriver,], <span class="at">by_element =</span> T)</span>
+<span id="cb9-5"><a href="methods.html#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#adding nearest river and distance to that river to our data frame</span></span>
+<span id="cb9-6"><a href="methods.html#cb9-6" aria-hidden="true" tabindex="-1"></a>dipperunique<span class="ot">&lt;-</span>dipperunique <span class="sc">%&gt;%</span> </span>
+<span id="cb9-7"><a href="methods.html#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">distancefromriver =</span> distanceobs, <span class="at">nearestriver =</span> nearestriver)</span>
+<span id="cb9-8"><a href="methods.html#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#st_nearest_river only provides the index of the flowline observation so we have to match the index of the row id with the flowline</span></span>
+<span id="cb9-9"><a href="methods.html#cb9-9" aria-hidden="true" tabindex="-1"></a>dipperwflow<span class="ot">&lt;-</span> <span class="fu">left_join</span>(<span class="fu">st_drop_geometry</span>(dipperunique), <span class="fu">st_drop_geometry</span>(co_flowlines), <span class="at">by=</span><span class="st">&#39;nearestriver&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-10"><a href="methods.html#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">COMID =</span> comid)</span></code></pre></div>
+</div>
+<div id="using-streamcat-tools-to-gather-flow-line-metrics" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Using StreamCat Tools To Gather Flow line Metrics<a href="methods.html#using-streamcat-tools-to-gather-flow-line-metrics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>StreamCat is an Environmental Protection Agency (EPA) dataset that compiles over 600 metrics for streams across the United States (Hill et al 2016). StreamCat was chosen because of the diversity of data that can be retrieved using one package. Since the goal of this project was to explore the characteristics of watersheds and catchment basins that are known to have a dipper presence, StreamCat is the perfect data set because the majority of metrics are measured at both the catchment and watershed level. Initially, twenty different variables were chosen to explore.The initial metrics explored were Dam Density, Base Flow Index, Elevation, Wetted Width, Thalweg Depth, Bankfull Width, Bankfull Depth, Nitrogen Surplus, and Land Cover. Within Land Cover, a percentage for each assigned land cover type is measured at the watershed and catchment level. Kingery &amp; Wilson 2020 describe Dipper habitat in detail, providing a filter to the Land Cover dataset. Land Cover metrics explored are Mixed Forest, Ice, Herbaceous Wetland, Grassland, Deciduous Forest, Conifer Forest, and Woody Wetland. Two years of NLCD fit the study parameters allowing for Land Cover from 2013 and 2019 to be used. All trends were displayed as a histogram where tight distributions were acknowledged and metrics with a uniform distribution were discarded. Important characteristics that are associated with Dipper observations are regional and landscape characteristics like elevation, slope, geographic location, land cover, thalweg depth, bank-full width, and bank full depth (Sullivan &amp; Vierling 2012). In the StreamCat dataset, Thalweg Depth, Bank full Width, and Bank full Depth are predicted characteristics utilizing Random Forest models for these estimates (Doyle et al 2023). Baseflow index is the the percent of flow that is baseflow. Elevation and slope are generated from a Digital Elevation Model (DEM) and Landcover is derived from the National Land Cover Database (NLCD) from USGS (Dewitz 2021). For this study, NLCD was used for the years 2013 and 2019 to align with the observation years that were defined when extracting GDIF data.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="methods.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># grab distinct comid so not running over multiples</span></span>
+<span id="cb10-2"><a href="methods.html#cb10-2" aria-hidden="true" tabindex="-1"></a>dippercomid <span class="ot">&lt;-</span> dipperwflow <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="methods.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(<span class="at">COMID =</span> COMID)</span>
+<span id="cb10-4"><a href="methods.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Using the COMID to pull metrics from the StreamCatTools package</span></span>
+<span id="cb10-5"><a href="methods.html#cb10-5" aria-hidden="true" tabindex="-1"></a>streamcattest <span class="ot">&lt;-</span> StreamCatTools<span class="sc">::</span><span class="fu">sc_get_data</span>(<span class="at">metric =</span><span class="st">&#39;BFI,</span></span>
+<span id="cb10-6"><a href="methods.html#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="st">                                             Elev,</span></span>
+<span id="cb10-7"><a href="methods.html#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="st">                                              thalweg_depth_cm,</span></span>
+<span id="cb10-8"><a href="methods.html#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="st">                                              bankfull_width_m,</span></span>
+<span id="cb10-9"><a href="methods.html#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="st">                                              bankfull_depth_m,</span></span>
+<span id="cb10-10"><a href="methods.html#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="st">                                              PctConif2013,</span></span>
+<span id="cb10-11"><a href="methods.html#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="st">                                              PctConif2019&#39;</span>,</span>
+<span id="cb10-12"><a href="methods.html#cb10-12" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">comid =</span> dippercomid<span class="sc">$</span>COMID)</span></code></pre></div>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="abstract.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="results.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

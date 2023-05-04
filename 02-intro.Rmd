@@ -1,1 +1,32 @@
-# Intro
+## Introduction
+
+```{r, include = FALSE}
+source("setup.R")
+```
+
+> Environmental indicators are important ques that allows us to quickly understand the state of an ecosystem (Watzin & MacIntosh 1999, Sullivan & Vierling 2012, Feck & Hall 2004). The response of the environment to pollutants, natural disasters, and anthropocentric disturbance can in return has long been documented (Watzin & MacIntosh 1999, Feck & Hall 2004, Sullivan & Vierling 2012). Species presence being a potential response or indicator within an environment is one example to how we use environmental indicators to understand environmental state. Avian presence, can tell us information about the habitat, food, and environmental resource quality (Sullivan, & Vierling 2012).
+>
+> Streams and watershed's are continuing to be monitored extensively, improving the amount of data and understanding of individual stream characteristics (Erwin & Hamilton 2005, Sullivan & Vierling 2012). Unique characteristics of a a stream stretch far beyond the flow line, influences are at the catchment and watershed level (Erwin & Hamilton 2005, Sullivan & Vierling 2012).
+>
+>     ![American Dipper]("images/dipper.png")
+>
+> \
+> The American Dipper *Cinclus mexicanus* is an aquatic avian species that ranges from Central America to the furthest northern parts of North America (Kingery & Wilson 2020). The American Dipper (referred to as 'Dipper' from now on) is often described as the only true aquatic passerine of North America (Kingery & Wilson 2020, Sullivan & Vierling 2012). As an aquatic songbird, the Dipper and water are interconnected. John Muir describe the Dipper extensively, attributing the relationship of the Dipper to streams as 'inseparable'. Researchers have pointed to the Dipper as an indication of good water quality (Feck & Hall 2004) but begs the question of what stream characteristics do Dippers truly prefer? In addition, can we use these characteristics as a model to explore other streams within their expected range and predict streams that would be favorable habitat for Dipper's. The goal of this project is to use citizen science observations of the American Dipper to analyze preferred stream and habitat characteristics in Colorado.
+
+> ## Stream Selection
+>
+> The interconnections of water quality and Dipper presence is well understood. Yet there are few explorations of the characteristics of streams that yield a dipper observation. Tyler & Ormerod 1994 explored dipper presence in relation to pH and water hardness. Feck & Hall 2004 explored water quality and the abundance of specific insects that Dipper prey upon. Sullivan & Vierling 2012 studied multiple environmental factors that influence Dipper presence. What is clear upon review of existing literature is that the credibility for Dippers as an environmental monitor is growing.
+>
+> Stream selection for suitable habitat is often split depending on the season. Dippers are observed year-round in fast moving streams that are unpolluted (Kingery & Wilson 2020). During the breeding season, Dipper's move to higher elevations in search for suitable nesting habitat. Dipper's tend to choose specific stream bank characteristics; steep rocks, cliffs, and over hanging ledges to provide suitable nesting sites (Sullivan, & Vierling 2012; Kingery & Wilson 2020). It is noted that during the breeding season, stream width and depth are a priority as the observed characteristics rarely exceed 15 meters in width and 2 meters in depth (Kingery & Wilson 2020). Another important feature is streams lined with rocks and cobble, providing suitable hatching grounds for food sources (Feck & Hall 2004; Sullivan & Vierling 2012).
+
+> Breeding season fluctuates depending on environmental factors. In fact, their breeding and migration can be influenced by hydrology, emphasizing that the higher amount of discharge in a stream early can result in an earlier Dipper breeding period (Nilsson et al. 2020). Though environmental conditions influence breeding time, Dipper's typically breed from late March to late April.
+>
+> During the non-breeding season, Dipper's move to larger streams at lower elevations. Post breeding habitat can include wetlands, mountain lakes, or even coastal estuaries. In the winter, deeper streams with ice-free stretches are preferred for hunting (Kingery & Wilson 2020). Similar to their breeding habitat, ledges and rocky riparian habitats are preferred for roosting. 
+>
+> ## Using Citizen Science Data
+>
+> Avian citizen science observations are among the largest citizen science data sets in the world. Continuous monitoring of streams through multiple entities continues to create higher resolution data, and better understanding of stream characteristics. The combination of high observation density and well understood stream characteristics at the catchment and watershed level, allow us to gain a better understanding of physical environmental factors that may influence Dipper presence.
+>
+> In North America, the Dipper is an unmistakable bird, meaning they are not easily confused with any other species. A Dipper is relatively small, warbler sized species ranging from 14-40 cm long, short wings, and a square tail. Adults display a gray, drab, configuration with a slight hint of brown on their head and neck. Their bill is short and dark during breeding season, and lighter in the non breeding season. Dippers are monomorphic but females tend to be smaller than males.
+>
+> The name "Dipper" is certainly related to their behavior. Dippers are known for their "bobbing" an up and down movement hinged at the knees. The species constantly dips, usually around 40-60 times per min, but does not dip while preening(citation Birds of the World). Dipping serves as a function to communicate location, as a warning, deter predators, signal fitness, measure position, and possibly provide better vision into water when browsing for prey.
